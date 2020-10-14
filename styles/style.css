@@ -1,0 +1,199 @@
+/**
+ * custom css for hydroMeter app
+ * Author Andreas Mpachtsevanos
+ * version 2020.10.13
+ */
+
+.main{
+	padding: 0 !important;
+}
+
+#map{
+	height: 100%;
+}
+
+.sideSub{
+    padding: 12px 15px;
+	color: #fff;
+	cursor: pointer;
+}
+.sideSub:hover{
+	background-color: #4a2726;
+}
+
+.overviewTable td{
+	padding: 30px !important;
+	cursor: pointer;
+}
+
+.login-page{
+	background: #000;
+}
+
+.dashboard-page .sidebar{
+	background: #000;
+}
+
+.dashboard-page .nav-sidebar > .active > a, .dashboard-page .nav-sidebar > .active > a:hover, .dashboard-page .nav-sidebar > .active > a:focus{
+	background-color: #4a2726;
+}
+
+.dashboard-page .nav > li > a:hover, .dashboard-page .nav > li > a:focus{
+	background-color: #4a2726;
+}
+
+.angularjs-datetime-picker{
+	z-index: 2000;
+}
+
+.toggle.ios, .toggle-on.ios, .toggle-off.ios {
+    border-radius: 20px;
+}
+ .toggle.ios .toggle-handle {
+    border-radius: 20px;
+}
+
+/*------*/
+.btn-electro {
+    color: #fff;
+    background-color: #000;
+    border-color: #ccc;
+}
+.btn-electro:hover, .btn-electro:focus, .btn-electro.focus, .btn-electro:active, .btn-electro.active, .open > .dropdown-toggle.btn-electro {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-color: #adadad;
+}
+.btn-electro:active, .btn-electro.active, .open > .dropdown-toggle.btn-electro {
+    background-image: none;
+}
+
+.badge-success{
+	background-color: #5cb85c;
+}
+.badge-danger{
+	background-color: #d9534f;
+}
+.label-electro{
+	background-color: #4a2726;
+}
+
+.dashboard-page .sidebar{
+	display: block;
+	z-index: 1037;
+}
+@media (max-width: 767px){
+	.dashboard-page .sidebar{
+		top: 30px;
+	}
+	.dashboard-page .main{
+		top: 50px;
+	}
+	.user-avatar{
+		display: none;
+	}
+}
+
+.toggle-menu{
+	background: #000;
+	padding: 8px;
+}
+@media (min-width: 768px) {
+	.toggle-menu{
+		display: none;
+	}
+}
+.reportLinks{
+	margin: 0 20px 0 20px !important;
+}
+.pillarLinks{
+	margin: 0 0px 0 20px !important;
+}
+.pillarGlyph{
+	padding: 10px 20px 16px 0 !important;
+}
+.nav-links{
+	margin: 0;
+}
+
+.powerFlow{
+	max-height: 170px;
+}
+
+.dashboard-page .sidebar .brand{
+	font-size: 2vmax;
+}
+
+.logo3pi{
+	position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.logo3pi a img{
+	width: 70px;
+	padding: 5px;
+}
+.mobLink{
+	position: absolute;
+    bottom: 60px;
+    left: 7px;
+}
+.mobLink a{
+	color: #f0ece1;
+	text-decoration: none;
+}
+@media (max-width: 767px) {
+	.logo3pi{
+		top: 0px;
+	}
+}
+
+.toggle-off.btn-xs{
+	padding-left: 8px;
+}
+
+/*xeditable select span*/
+.editable-wrap{
+	white-space: normal;
+}
+.editable-wrap .editable-controls, .editable-wrap .editable-error{
+	padding: 0 15px;
+}
+
+#loading-bar .bar {
+  position: relative;
+  background: #4a2726;
+  height: 3px;
+}
+
+/**
+ * bootstrap modal extend
+ */
+@media (min-width: 768px) {
+	.modal-xl {
+		width: 90%;
+		max-width:1200px;
+	}
+}
+
+.input-xs {
+	height: 20px;
+	padding: 2px 5px;
+	font-size: 10px;
+	line-height: 1.5; /* If Placeholder of the input is moved up, rem/modify this. */
+	border-radius: 3px;
+}
+
+.mapLabels {
+    padding: 5px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+}
+
+.panel-edit{
+	margin-bottom: 0;
+	position: absolute;
+	bottom: 0;
+	z-index: 9999;
+}

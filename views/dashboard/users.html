@@ -1,0 +1,97 @@
+<div>
+	<h2>Χρήστες <small></small></h2>
+	<div class="jumbotron">
+		<div class="container">
+			<h2>{{user.name}}</h2>
+			<p style="font-size: 16px;">Στοιχεία λογαριασμού</p>
+			<hr>
+			<form class="form-horizontal" editable-form name="editableForm" onaftersave="afterSaveCurrentUser()">
+			    <div class="form-group">
+				    <label class="col-sm-2 control-label">Όνομα</label>
+				    <div class="col-sm-4">
+				    	<span class="form-control" editable-text="currentUser.name" e-name="name" e-required>{{currentUser.name}}</span>
+				    </div>
+			    </div> 
+			    <div class="form-group">
+				    <label class="col-sm-2 control-label">Username</label>
+				    <div class="col-sm-4">
+				    	<span class="form-control" editable-text="currentUser.username" e-name="username" e-required>{{currentUser.username}}</span>
+				    </div>
+			    </div>
+			    <div class="form-group">
+				    <label class="col-sm-2 control-label">Password</label>
+				    <div class="col-sm-4">
+				    	<span class="form-control" editable-text="currentUser.password" e-name="password" e-required>{{currentUser.password}}</span>
+				    </div>
+			    </div>
+			    <div class="form-group">
+				    <label class="col-sm-2 control-label">Email</label>
+				    <div class="col-sm-4">
+				    	<span class="form-control" editable-text="currentUser.email" e-name="email">{{currentUser.email || '-'}}</span>
+				    </div>
+			    </div>
+			    <div class="form-group">
+				    <label class="col-sm-2 control-label">Τηλέφωνο</label>
+				    <div class="col-sm-4">
+				    	<span class="form-control" editable-text="currentUser.phone" e-name="phone">{{currentUser.phone || '-'}}</span>
+				    </div>
+			    </div>
+			    <div class="form-group">
+			      	<label class="col-sm-2 control-label">Τύπος</label>
+			      	<div class="col-sm-4">
+			      		<span class="form-control" editable-select="currentUser.type" e-name="type" e-ng-options="g.value as g.text for g in userTypes" e-required>
+				        	{{(userTypes | filter:{value: currentUser.type})[0].text}}
+				      	</span>
+				     </div>
+			    </div>
+			    <div class="buttons">
+			      	<button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">Αλλαγή στοιχείων</button>
+			      	<span ng-show="editableForm.$visible">
+			        	<button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">Αποθήκευση</button>
+			        	<button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">Ακύρωση</button>
+			      	</span>
+    			</div>
+    		</form>
+			<hr>
+			<div ng-if="user.type!=2">
+				<h3>Άλλοι χρήστες</h3>
+				<div class="table-responsive">
+					<table class="table table-bordered table-hover table-condensed">
+					    <tr style="font-weight: bold">
+					      	<td style="width:20%">Όνομα</td>
+					      	<td style="width:15%">Username</td>
+					      	<td style="width:10%">Password</td>
+					      	<td style="width:20%">Email</td>
+					      	<td style="width:15%">Τηλέφωνο</td>
+					      	<td style="width:15%">Τύπος</td>
+					    	<td style="width:5%" ng-if="user.type!=1"></td>
+					    </tr>
+					    <tr ng-repeat="u in users | filter: { id: '!'+currentUser.id }">
+					      	<td><span editable-text="u.name" e-name="name" e-form="rowform">{{u.name}}</span></td>
+					      	<td><span editable-text="u.username" e-name="username" e-form="rowform">{{u.username}}</span></td>
+					      	<td><span editable-password="u.password" e-name="password" e-form="rowform">*****</span></td>
+					      	<td><span editable-email="u.email" e-name="email" e-form="rowform">{{u.email || '-'}}</span></td>
+					      	<td><span editable-tel="u.phone" e-name="phone" e-form="rowform">{{u.phone || '-'}}</span></td>
+					      	<td><span editable-select="u.type" e-name="type" e-form="rowform" e-ng-options="g.value as g.text for g in userTypes">{{showType(u.type)}}</span></td>
+					      	<td style="white-space: nowrap" ng-if="user.type!=1">
+						        <form editable-form name="rowform" onbeforesave="saveUser($data, u.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == u">
+						          	<button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary btn-rounded btn-xs">
+						            	<span class="glyphicon glyphicon-ok"></span>
+						          	</button>
+						          	<button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default btn-rounded btn-xs">
+						            	<span class="glyphicon glyphicon-remove"></span>
+						          	</button>
+						        </form>
+						        <div class="buttons" ng-show="!rowform.$visible">
+						          	<button type="button" class="btn btn-primary btn-rounded btn-xs" title="Αλλαγή" ng-click="rowform.$show()" ng-disabled="user.type==1"><span class="glyphicon glyphicon-edit"></span></button>
+						          	<button type="button" class="btn btn-danger btn-rounded btn-xs" title="Διαγραφή" ng-click="removeUser(u.id)" ng-disabled="user.type==1"><span class="glyphicon glyphicon-remove"></span></button>
+						        </div>
+					    	</td>
+					    </tr>
+					</table>
+				</div>
+				<button type="button" class="btn btn-default" ng-click="addUser()" ng-if="user.type!=1">Νέος χρήστης</button>
+			</div>
+		</div>
+	</div>
+</div>
