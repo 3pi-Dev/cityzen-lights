@@ -23,6 +23,8 @@
 * [JQuery](https://jquery.com)
 * [Leaflet](https://leafletjs.com/)
 * [ChartJS](https://www.chartjs.org/)
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 
 
