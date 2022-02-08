@@ -17,6 +17,7 @@
 
 * [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-2019)
 * [PHP](https://www.php.net/)
+* [JavaScript](https://www.javascript.com/)
 * [AngularJS](https://angularjs.org/)
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
