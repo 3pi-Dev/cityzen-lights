@@ -30,10 +30,10 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This project is part of an integrated electric luminaire management system. In the code you'll find the client 
-that a user can see information about the lighting devices and manage them. 
-A Sql Server database dump file is also included with the schema of the database which the client links to. 
-The database should be seted up for all devices to store their data in it.
+This project is part of an integrated electric luminaire management system. 
+In the code you will find the client app through which the users can view information about all electrical appliances, manage them (open/close) and export various usage statistics through the reports that are available.
+An Sql Server database dump file is also included with the schema of the database which the client links to. 
+<br>****The database should be seted up for all devices to store their data in it.***
 
 ### Installation
 
