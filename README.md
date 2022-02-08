@@ -27,8 +27,8 @@
 
 
 
-<!-- GETTING STARTED -->
-## Getting Started
+<!-- Description -->
+## Description
 
 This project is part of an integrated electric luminaire management system. 
 In the code you will find the client app through which the users can view information about all electrical appliances, manage them (open/close) and export various usage statistics through the reports that are available.
